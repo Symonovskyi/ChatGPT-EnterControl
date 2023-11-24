@@ -1,4 +1,4 @@
-# ![ChatGPT EnterControl Icon](./icons/icon48.png) ChatGPT EnterControl
+# ![ChatGPT EnterControl Icon](../../icons/icon48.png) ChatGPT 
 
 ## Descrição
 
