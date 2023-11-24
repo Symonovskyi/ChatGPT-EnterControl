@@ -1,0 +1,4 @@
+{
+    "extensionName": { "message": "ChatGPT EnterControl" },
+    "extensionDescription": { "message": "チャットを管理：送信はCtrl+Enter、新しい行はEnter/Shift+Enter。" }
+}

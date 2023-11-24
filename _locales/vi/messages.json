@@ -1,0 +1,4 @@
+{
+    "extensionName": { "message": "ChatGPT EnterControl" },
+    "extensionDescription": { "message": "Quản lý trò chuyện: Ctrl+Enter để gửi, Enter/Shift+Enter để dòng mới." }
+}

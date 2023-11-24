@@ -1,0 +1,4 @@
+{
+    "extensionName": { "message": "ChatGPT EnterControl" },
+    "extensionDescription": { "message": "Керуйте чатом: Ctrl+Enter для відправки, Enter/Shift+Enter для нового рядка." }
+}

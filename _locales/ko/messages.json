@@ -1,0 +1,4 @@
+{
+    "extensionName": { "message": "ChatGPT EnterControl" },
+    "extensionDescription": { "message": "채팅 관리: 전송은 Ctrl+Enter, 새 줄은 Enter/Shift+Enter." }
+}
