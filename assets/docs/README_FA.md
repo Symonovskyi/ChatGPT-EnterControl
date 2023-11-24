@@ -1,8 +1,10 @@
-# ChatGPT EnterControl
+# ![ChatGPT EnterControl Icon](./icons/icon48.png) ChatGPT EnterControl
 
 ## توضیحات
 
 ChatGPT EnterControl یک افزونه مرورگر گوگل کروم است که تعامل با ChatGPT را بهبود می‌بخشد. این افزونه به شما امکان می‌دهد تا با استفاده از دکمه‌های Enter یا Shift+Enter خطوط جدید ایجاد کنید و با استفاده از Ctrl+Enter پیام ارسال نمایید.
+
+![ChatGPT EnterControl Promo Image](../promo-images/promo-image_FA.jpg)
 
 ## ویژگی‌ها
 

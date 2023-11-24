@@ -1,8 +1,10 @@
-# ChatGPT EnterControl
+# ![ChatGPT EnterControl Icon](./icons/icon48.png) ChatGPT EnterControl
 
 ## विवरण
 
 ChatGPT EnterControl एक Google Chrome ब्राउज़र एक्सटेंशन है जो ChatGPT के साथ इंटरैक्शन को बेहतर बनाता है। यह आपको Enter या Shift+Enter का उपयोग करके नई पंक्तियाँ बनाने और Ctrl+Enter का उपयोग करके संदेश भेजने की अनुमति देता है।
+
+![ChatGPT EnterControl Promo Image](../promo-images/promo-image_HI.jpg)
 
 ## विशेषताएँ
 

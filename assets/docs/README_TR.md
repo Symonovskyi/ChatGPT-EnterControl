@@ -1,8 +1,10 @@
-# ChatGPT EnterControl
+# ![ChatGPT EnterControl Icon](./icons/icon48.png) ChatGPT EnterControl
 
 ## Açıklama
 
 ChatGPT-EnterControl, Google Chrome tarayıcı uzantısıdır ve ChatGPT ile etkileşimi artırır. Enter veya Shift+Enter kullanarak yeni satırlar oluşturmanıza ve Ctrl+Enter ile mesaj göndermenize olanak tanır.
+
+![ChatGPT EnterControl Promo Image](../promo-images/promo-image_TR.jpg)
 
 ## Özellikler
 

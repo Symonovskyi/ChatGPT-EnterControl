@@ -1,8 +1,10 @@
-# ChatGPT EnterControl
+# ![ChatGPT EnterControl Icon](./icons/icon48.png) ChatGPT EnterControl
 
 ## Mô tả
 
 ChatGPT EnterControl là một tiện ích mở rộng trình duyệt Google Chrome giúp tăng cường tương tác với ChatGPT. Nó cho phép bạn tạo dòng mới bằng cách sử dụng Enter hoặc Shift+Enter và gửi tin nhắn bằng Ctrl+Enter.
+
+![ChatGPT EnterControl Promo Image](../promo-images/promo-image_VI.jpg)
 
 ## Tính năng
 

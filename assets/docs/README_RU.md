@@ -1,8 +1,10 @@
-# ChatGPT EnterControl
+# ![ChatGPT EnterControl Icon](./icons/icon48.png) ChatGPT EnterControl
 
 ## Описание
 
 ChatGPT EnterControl – это расширение для браузера Google Chrome, улучшающее взаимодействие с чатом ChatGPT. Оно позволяет переносить строки, используя Enter или Shift+Enter, и отправлять сообщения через Ctrl+Enter.
+
+![ChatGPT EnterControl Promo Image](../promo-images/promo-image_RU.jpg)
 
 ## Особенности
 
