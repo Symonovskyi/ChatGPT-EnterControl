@@ -12,7 +12,7 @@ ChatGPT EnterControl یک افزونه مرورگر گوگل کروم است ک�
 - **ارسال پیام‌ها با استفاده از Ctrl+Enter**: از ارسال‌های تصادفی جلوگیری کرده و فرآیند را کنترل کنید.
 
 ## نصب
-1. افزونه را از [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="لوگوی فروشگاه کروم"> فروشگاه کروم](https://chromewebstore.google.com/detail/ChatGPT-EnterControl) دانلود کنید.
+1. افزونه را از [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="لوگوی فروشگاه کروم"> فروشگاه کروم](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao) دانلود کنید.
 2. افزونه را در مرورگر <img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="لوگوی کروم"> کروم خود فعال کنید.
 3. چت <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="لوگوی ChatGPT"> ChatGPT را باز کرده و از ویژگی‌های راحت آن لذت ببرید.
 

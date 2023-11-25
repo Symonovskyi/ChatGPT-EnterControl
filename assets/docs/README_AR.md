@@ -12,7 +12,7 @@ ChatGPT EnterControl هو امتداد لمتصفح Google Chrome يعزز ال�
 - **إرسال الرسائل باستخدام Ctrl+Enter**: تجنب الإرسال العرضي وتحكم في العملية.
 
 ## التثبيت
-1. قم بتحميل الامتداد من [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="شعار متجر Chrome"> متجر Chrome](https://chromewebstore.google.com/detail/ChatGPT-EnterControl).
+1. قم بتحميل الامتداد من [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="شعار متجر Chrome"> متجر Chrome](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao).
 2. فعّل الامتداد في متصفح <img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="شعار كروم"> Chrome الخاص بك.
 3. افتح الدردشة <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="شعار ChatGPT"> ChatGPT واستمتع بالميزات المريحة.
 

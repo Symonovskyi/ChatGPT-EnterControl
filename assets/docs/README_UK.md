@@ -12,7 +12,7 @@ ChatGPT EnterControl - це розширення браузера Google Chrome,
 - **Відправлення повідомлень за допомогою Ctrl+Enter**: Уникайте випадкових відправлень та контролюйте процес.
 
 ## Встановлення
-1. Завантажте розширення з [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Логотип Chrome Web Store"> Chrome Web Store](https://chromewebstore.google.com/detail/ChatGPT-EnterControl).
+1. Завантажте розширення з [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Логотип Chrome Web Store"> Chrome Web Store](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao).
 2. Активуйте розширення у вашому браузері <img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="Логотип Chrome"> Chrome.
 3. Відкрийте чат <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="Логотип ChatGPT"> ChatGPT та насолоджуйтеся зручними функціями.
 

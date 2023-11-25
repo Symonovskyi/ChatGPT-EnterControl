@@ -12,7 +12,7 @@ ChatGPT-EnterControlは、Google Chromeのブラウザ拡張機能で、ChatGPT�
 - **Ctrl+Enterでのメッセージ送信**: 誤送信を避け、プロセスをコントロールします。
 
 ## インストール
-1. [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome Web Storeのロゴ"> Chrome Web Store](https://chromewebstore.google.com/detail/ChatGPT-EnterControl)から拡張機能をダウンロードします。
+1. [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome Web Storeのロゴ"> Chrome Web Store](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao)から拡張機能をダウンロードします。
 2. <img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="Chromeのロゴ"> Chromeブラウザで拡張機能を有効化します。
 3. <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="ChatGPTのロゴ"> ChatGPTチャットを開き、便利な機能をお楽しみください。
 

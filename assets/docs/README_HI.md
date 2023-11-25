@@ -12,7 +12,7 @@ ChatGPT EnterControl एक Google Chrome ब्राउज़र एक्स�
 - **Ctrl+Enter के साथ संदेश भेजें**: गलती से संदेश भेजने से बचें और प्रक्रिया को नियंत्रित करें।
 
 ## स्थापना
-1. [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome वेब स्टोर लोगो"> Chrome वेब स्टोर](https://chromewebstore.google.com/detail/ChatGPT-EnterControl) से एक्सटेंशन डाउनलोड करें।
+1. [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome वेब स्टोर लोगो"> Chrome वेब स्टोर](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao) से एक्सटेंशन डाउनलोड करें।
 2. अपने <img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="Chrome लोगो"> Chrome ब्राउज़र में एक्सटेंशन सक्रिय करें।
 3. <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="ChatGPT लोगो"> ChatGPT चैट खोलें और सुविधाजनक सुविधाओं का आनंद लें।
 

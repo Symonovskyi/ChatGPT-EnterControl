@@ -12,7 +12,7 @@ ChatGPT EnterControl es una extensión del navegador Google Chrome que mejora la
 - **Enviar mensajes con Ctrl+Enter**: Evita envíos accidentales y controla el proceso.
 
 ## Instalación
-1. Descarga la extensión desde [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Logo de Chrome Web Store"> Chrome Web Store](https://chromewebstore.google.com/detail/ChatGPT-EnterControl).
+1. Descarga la extensión desde [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Logo de Chrome Web Store"> Chrome Web Store](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao).
 2. Activa la extensión en tu navegador <img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="Logo de Chrome"> Chrome.
 3. Abre el chat <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="Logo de ChatGPT"> ChatGPT y disfruta de sus prácticas funciones.
 

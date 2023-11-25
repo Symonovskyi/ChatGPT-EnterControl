@@ -12,7 +12,7 @@ ChatGPT EnterControl 是一个谷歌Chrome浏览器扩展，增强了与ChatGPT�
 - **使用Ctrl+Enter发送消息**: 避免意外发送并控制过程。
 
 ## 安装
-1. 从[<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome网上应用店标志"> Chrome网上应用店](https://chromewebstore.google.com/detail/ChatGPT-EnterControl)下载扩展。
+1. 从[<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome网上应用店标志"> Chrome网上应用店](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao)下载扩展。
 2. 在您的<img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="Chrome标志"> Chrome浏览器中激活扩展。
 3. 打开<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="ChatGPT标志"> ChatGPT聊天并享受便利功能。
 

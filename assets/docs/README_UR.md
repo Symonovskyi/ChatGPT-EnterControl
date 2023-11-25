@@ -12,7 +12,7 @@ ChatGPT EnterControl ایک Google Chrome براؤزر کی توسیع ہے جو
 - **Ctrl+Enter کے ساتھ پیغامات بھیجیں**: غلطی سے پیغامات بھیجنے سے بچیں اور عمل کو کنٹرول کریں۔
 
 ## نصب کرنا
-1. [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome ویب اسٹور کا لوگو"> Chrome ویب اسٹور](https://chromewebstore.google.com/detail/ChatGPT-EnterControl) سے توسیع ڈاؤن لوڈ کریں۔
+1. [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome ویب اسٹور کا لوگو"> Chrome ویب اسٹور](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao) سے توسیع ڈاؤن لوڈ کریں۔
 2. اپنے <img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="Chrome کا لوگو"> Chrome براؤزر میں توسیع کو فعال کریں۔
 3. <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="ChatGPT کا لوگو"> ChatGPT چیٹ کھولیں اور آسان خصوصیات سے لطف اندوز ہوں۔
 

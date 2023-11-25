@@ -12,7 +12,7 @@ ChatGPT-EnterControl은 Google Chrome 브라우저 확장 프로그램으로, Ch
 - **Ctrl+Enter로 메시지 보내기**: 실수로 메시지를 보내는 것을 피하고 과정을 제어합니다.
 
 ## 설치
-1. [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome 웹스토어 로고"> Chrome 웹스토어](https://chromewebstore.google.com/detail/ChatGPT-EnterControl)에서 확장 프로그램을 다운로드하세요.
+1. [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome 웹스토어 로고"> Chrome 웹스토어](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao)에서 확장 프로그램을 다운로드하세요.
 2. <img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="Chrome 로고"> Chrome 브라우저에서 확장 프로그램을 활성화하세요.
 3. <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="ChatGPT 로고"> ChatGPT 채팅을 열고 편리한 기능을 즐기세요.
 

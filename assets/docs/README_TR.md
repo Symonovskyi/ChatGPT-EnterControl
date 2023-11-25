@@ -12,7 +12,7 @@ ChatGPT-EnterControl, Google Chrome tarayıcı uzantısıdır ve ChatGPT ile etk
 - **Ctrl+Enter ile mesaj gönderme**: Kazara gönderimleri önleyin ve süreci kontrol edin.
 
 ## Kurulum
-1. Uzantıyı [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome Web Mağazası Logosu"> Chrome Web Mağazası](https://chromewebstore.google.com/detail/ChatGPT-EnterControl)'ndan indirin.
+1. Uzantıyı [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Chrome Web Mağazası Logosu"> Chrome Web Mağazası](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao)'ndan indirin.
 2. <img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="Chrome Logosu"> Chrome tarayıcınızda uzantıyı etkinleştirin.
 3. <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="ChatGPT Logosu"> ChatGPT sohbetini açın ve kullanışlı özelliklerin keyfini çıkarın.
 

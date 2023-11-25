@@ -12,7 +12,7 @@ ChatGPT EnterControl là một tiện ích mở rộng trình duyệt Google Chr
 - **Gửi tin nhắn bằng Ctrl+Enter**: Tránh gửi nhầm và kiểm soát quá trình.
 
 ## Cài đặt
-1. Tải tiện ích từ [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Logo Cửa hàng Web Chrome"> Cửa hàng Web Chrome](https://chromewebstore.google.com/detail/ChatGPT-EnterControl).
+1. Tải tiện ích từ [<img src="https://fonts.gstatic.com/s/i/productlogos/chrome_store/v7/192px.svg" width="12" alt="Logo Cửa hàng Web Chrome"> Cửa hàng Web Chrome](https://chromewebstore.google.com/detail/chatgpt-entercontrol/llifnfdbmdcpjfnlhpombbadbhfghdao).
 2. Kích hoạt tiện ích trong trình duyệt <img src="https://fonts.gstatic.com/s/i/productlogos/chrome/v7/192px.svg" width="12" alt="Logo Chrome"> Chrome của bạn.
 3. Mở cuộc trò chuyện <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" width="12" alt="Logo ChatGPT"> ChatGPT và tận hưởng các tính năng tiện lợi.
 
