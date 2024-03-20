@@ -44,4 +44,4 @@ To view the description in other languages, select the required language below:
 
 ## Licensing
 
-This project is distributed under a dual license: [MIT License](./LICENSE_MIT) and [Creative Commons Attribution 4.0 International (CC BY 4.0)](./LICENSE_CC_BY_4.0). This means that when using, copying, modifying, and distributing the project, you must comply with the terms of both licenses. In particular, you must credit authorship in accordance with the requirements of CC BY while also adhering to
+This project is distributed under a dual license: [MIT License](./LICENSE_MIT) and [Creative Commons Attribution 4.0 International (CC BY 4.0)](./LICENSE_CC_BY_4.0). This means that when using, copying, modifying, and distributing the project, you must comply with the terms of both licenses. In particular, you must credit authorship in accordance with the requirements of CC BY while also adhering to MIT.
