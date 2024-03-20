@@ -7,11 +7,21 @@
 
     // Function for inserting a line break into a text field
     function insertLineBreak(textarea) {
+        if (!textarea) return;
+
+        // Get the current cursor position
         const cursorPos = textarea.selectionStart;
         const text = textarea.value;
-        const newText = text.slice(0, cursorPos) + "\n" + text.slice(cursorPos);
-        textarea.value = newText;
+
+        // Insert a new line at the cursor position
+        textarea.value = `${text.slice(0, cursorPos)}\n${text.slice(cursorPos)}`;
+
+        // Update the cursor position to be after the newly inserted line break
         textarea.selectionStart = textarea.selectionEnd = cursorPos + 1;
+
+        // Create and dispatch an 'input' event to ensure any related UI updates are triggered
+        const event = new Event('input', { bubbles: true });
+        textarea.dispatchEvent(event);
     }
 
     // Variable tracking the extension state (enabled/disabled)
