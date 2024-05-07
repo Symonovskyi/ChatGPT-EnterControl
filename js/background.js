@@ -21,14 +21,14 @@ chrome.action.onClicked.addListener((tab) => {
 
 // Function for sending a message to the content script
 function sendMessageToContentScript(tab) {
-    if (tab.url && tab.url.includes("chat.openai.com")) {
+    if (tab.url && (tab.url.includes("chat.openai.com") || tab.url.includes("chatgpt.com"))) {
         chrome.tabs.sendMessage(tab.id, {enabled: extensionEnabled});
     }
 }
 
 // Tab update handler
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    if (changeInfo.status === 'complete' && tab.url && tab.url.includes("chat.openai.com")) {
+    if (changeInfo.status === 'complete' && tab.url && (tab.url.includes("chat.openai.com") || tab.url.includes("chatgpt.com"))) {
         // Injecting content script if the extension is enabled
         if (extensionEnabled) {
             chrome.scripting.executeScript({
