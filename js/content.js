@@ -45,13 +45,14 @@
             if (event.ctrlKey) {
                 event.preventDefault();
 
-                // Check if the "Save & Submit" button is in the same block as the cursor
-                let container = event.target.closest('.w-full');
+                // Search for the container with class .w-full or .flex-col, responsible for message editing
+                let container = event.target.closest('.w-full') || event.target.closest('.flex-col');
                 let primaryButtonInSameBlock = container ? container.querySelector('.btn-primary') : null;
 
-                let buttonToClick = primaryButtonInSameBlock && primaryButtonInSameBlock.textContent.includes('Save & Submit')
+                // Search for the button to send a new message if the edit button is not found
+                let buttonToClick = primaryButtonInSameBlock
                     ? primaryButtonInSameBlock
-                    : document.querySelector('[data-testid="send-button"]');
+                    : container ? container.querySelector('button:has(svg)') : null;
 
                 if (buttonToClick) {
                     buttonToClick.click();
@@ -63,7 +64,4 @@
             }
         }
     }, true);
-
-
 })();
-
