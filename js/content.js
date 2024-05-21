@@ -52,7 +52,15 @@
                 // Search for the button to send a new message if the edit button is not found
                 let buttonToClick = primaryButtonInSameBlock
                     ? primaryButtonInSameBlock
-                    : container ? container.querySelector('button:has(svg)') : null;
+                    : container ? container.querySelector('button[data-testid="fruitjuice-send-button"]') : null;
+
+                // If the specific button is not found, fallback to the last svg button
+                if (!buttonToClick && container) {
+                    let svgButtons = container.querySelectorAll('button:has(svg)');
+                    if (svgButtons.length > 0) {
+                        buttonToClick = svgButtons[svgButtons.length - 1];
+                    }
+                }
 
                 if (buttonToClick) {
                     buttonToClick.click();
