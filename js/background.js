@@ -1,45 +1,68 @@
-// Global variable that keeps track of the extension state (enabled/disabled)
+// Keeps track of the extension state (enabled/disabled).
 let extensionEnabled = true;
 
-// Function to be executed when the background script is loaded
+/**
+ * Handles installation or update events for the extension.
+ * It sets the initial state and icon when the extension is installed or updated.
+ */
 chrome.runtime.onInstalled.addListener(() => {
-    // Set the icon when installing the extension
     updateIcon();
 });
 
-// Handler for clicking the extension icon in the browser bar
+/**
+ * Toggles the extension's state (enabled/disabled) when the action button is clicked.
+ * Updates the icon and notifies the content script about the state change.
+ * 
+ * @param {Tab} tab - The current active tab when the extension icon is clicked.
+ */
 chrome.action.onClicked.addListener((tab) => {
-    // Invert extension state
     extensionEnabled = !extensionEnabled;
-    // Update the icon and send a message to the content script
-    updateIcon().then(() => {
-        sendMessageToContentScript(tab);
-    }).catch(error => {
-        console.error('Error updating the icon:', error);
-    });
+
+    updateIcon()
+        .then(() => {
+            sendMessageToContentScript(tab);
+        })
+        .catch(error => {
+            console.error('Error updating the icon:', error);
+        });
 });
 
-// Function for sending a message to the content script
+/**
+ * Sends the current state of the extension to the content script.
+ * Only sends messages if the tab URL contains "chat.openai.com" or "chatgpt.com".
+ * 
+ * @param {Tab} tab - The current tab where the content script will receive the message.
+ */
 function sendMessageToContentScript(tab) {
     if (tab.url && (tab.url.includes("chat.openai.com") || tab.url.includes("chatgpt.com"))) {
-        chrome.tabs.sendMessage(tab.id, {enabled: extensionEnabled});
+        chrome.tabs.sendMessage(tab.id, { enabled: extensionEnabled });
     }
 }
 
-// Tab update handler
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+/**
+ * Injects the content script into the page when the tab is updated.
+ * Only injects if the tab is on a supported domain (e.g., "chat.openai.com").
+ * 
+ * @param {number} tabId - The ID of the tab being updated.
+ * @param {object} changeInfo - Information about the tab's state.
+ * @param {Tab} tab - The tab object for the updated tab.
+ */
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (changeInfo.status === 'complete' && tab.url && (tab.url.includes("chat.openai.com") || tab.url.includes("chatgpt.com"))) {
-        // Injecting content script if the extension is enabled
         if (extensionEnabled) {
             chrome.scripting.executeScript({
-                target: {tabId: tabId},
+                target: { tabId: tabId },
                 files: ["js/content.js"]
             });
         }
     }
 });
 
-// Function for updating the extension icon
+/**
+ * Updates the extension's icon based on its current state (enabled or disabled).
+ * 
+ * @returns {Promise} - Resolves when the icon is updated or rejects if an error occurs.
+ */
 function updateIcon() {
     return new Promise((resolve, reject) => {
         if (!chrome.action) {
@@ -48,11 +71,11 @@ function updateIcon() {
             return;
         }
 
-        // Define the path to the icon depending on the extension state
+        // Determine the icon based on the state of the extension.
         const iconSuffix = extensionEnabled ? "" : "_gray";
         const iconPath = size => `../icons/icon${size}${iconSuffix}.png`;
 
-        // Set icon
+        // Update the extension's icon.
         chrome.action.setIcon({
             path: {
                 "16": iconPath(16),
