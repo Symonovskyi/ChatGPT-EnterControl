@@ -1,9 +1,20 @@
 (function () {
+    // Function to log debug messages if debugging is enabled.
+    function logDebug(...args) {
+        const debug = false;  // Set to true to enable debug logging
+        if (debug) {
+            console.debug(...args);
+        }
+    }
+
     // Prevents script from running multiple times.
     if (window.hasRun) {
+        logDebug("Script has already run, exiting...");
         return;
     }
     window.hasRun = true;
+
+    logDebug("Script started and running for the first time.");
 
     /**
      * Selectors for identifying the "New Message" button.
@@ -20,6 +31,8 @@
         "button[aria-label][data-testid='send-button']",                // By aria-label and data-testid attributes
         "button svg[width='32'][height='32'][viewBox='0 0 32 32']"      // Specific SVG inside the button
     ];
+
+    logDebug("New Message Button Selectors initialized:", newMessageButtonSelectors);
 
     /**
      * Selectors for identifying the "Edit Message" button.
@@ -38,36 +51,56 @@
         "button.btn.btn-primary.relative"                               // Button by class names
     ];
 
+    logDebug("Edit Message Button Selectors initialized:", editMessageButtonSelectors);
+
     /**
      * Inserts a line break into a text field or contenteditable element.
      * @param {HTMLElement} inputField - The active element for inserting the line break.
      */
     function insertLineBreak(inputField) {
-        if (!inputField) return;
+        logDebug("Attempting to insert line break. Element:", inputField);
+
+        if (!inputField) {
+            console.warn("No input field provided, aborting line break insertion.");
+            return;
+        }
+
+        const tagName = inputField.tagName.toLowerCase();
+        logDebug("Input field tagName:", tagName);
 
         // Handle textarea and input elements
         if (inputField.tagName.toLowerCase() === 'textarea' || inputField.tagName.toLowerCase() === 'input') {
-            console.debug('Inserting a line break into an input or textarea.');
+            logDebug('Inserting a line break into an input or textarea.');
 
             // Insert the line break at the cursor position
             const cursorPos = inputField.selectionStart;
             const text = inputField.value;
 
+            logDebug("Current cursor position:", cursorPos, "Current text length:", text.length);
+
             inputField.value = `${text.slice(0, cursorPos)}\n${text.slice(cursorPos)}`;
             inputField.selectionStart = inputField.selectionEnd = cursorPos + 1;
+
+            logDebug("Line break inserted. Updated text:", inputField.value);
 
             // Trigger input event to ensure UI updates
             const event = new Event('input', { bubbles: true });
             inputField.dispatchEvent(event);
+            logDebug("Input event dispatched after line break insertion.");
 
         } else if (inputField.isContentEditable) {
             // Handle contenteditable elements
-            console.debug('Inserting a line break into a contenteditable element.');
+            logDebug('Inserting a line break into a contenteditable element.');
 
             const selection = window.getSelection();
-            if (!selection.rangeCount) return;
+            if (!selection.rangeCount) {
+                console.warn("No range found in selection, aborting line break insertion.");
+                return;
+            }
 
             const range = selection.getRangeAt(0);
+            logDebug("Current selection range:", range);
+
             const br = document.createElement("br");
 
             // Insert the <br> tag at the cursor position
@@ -76,63 +109,73 @@
             range.setStartAfter(br);
             range.setEndAfter(br);
 
+            logDebug("Line break (<br>) inserted at cursor position.");
+
             // Update the cursor position
             selection.removeAllRanges();
             selection.addRange(range);
+            logDebug("Cursor position updated after line break insertion.");
         }
     }
 
     /**
      * Searches for the closest "Send" or "Edit" button in parent containers.
+     * This function traverses up the DOM tree from the active element and attempts to find 
+     * the closest button that matches either the "Edit Message" or "New Message" selectors.
+     * The search is limited by the maximum number of levels specified by `maxSearchLevels`.
+     * 
      * @param {HTMLElement} activeElement - The currently active element.
-     * @returns {HTMLElement|null} - The matched button or null if none is found.
+     * @returns {HTMLElement|null} - The matched button (either "Edit Message" or "New Message") or null if none is found.
      */
     function findClosestButton(activeElement) {
+        logDebug("Starting search for closest button. Active element:", activeElement);
+
         let parent = activeElement;
-        const maxSearchLevels = 5;
+        const maxSearchLevels = 5;  // Limit the search depth in the DOM tree
         let currentLevel = 0;
 
         let matchingButton = null;
-        let buttonType = '';  // 'EditMessage' or 'NewMessage'
-        let totalMatches = 0;
+        let buttonType = '';  // To store the type of button found: 'EditMessage' or 'NewMessage'
+        let totalMatches = 0;  // To track the number of matches found during traversal
 
-        console.debug('Searching for the closest button in parent elements.');
-
-        // Traverse up the DOM tree to find a button
+        // Traverse up the DOM tree to find a button within the specified number of levels
         while (parent && currentLevel < maxSearchLevels) {
             currentLevel++;
-            console.debug(`Searching at level ${currentLevel}.`);
+            logDebug(`Searching at level ${currentLevel}. Current parent element:`, parent);
 
-            // Check for "Edit Message" buttons
+            // Check for "Edit Message" buttons in the current parent element
             editMessageButtonSelectors.forEach((selector, index) => {
                 const button = parent.querySelector(selector);
                 if (button) {
-                    console.debug(`Found "Edit Message" button using selector ${selector}.`);
+                    logDebug(`Found "Edit Message" button using selector [${index}]: ${selector}.`);
                     matchingButton = button;
                     buttonType = 'EditMessage';
                     totalMatches++;
                 }
             });
 
-            // Check for "New Message" buttons
+            // Check for "New Message" buttons in the current parent element
             newMessageButtonSelectors.forEach((selector, index) => {
                 const button = parent.querySelector(selector);
-                if (button) {
-                    console.debug(`Found "New Message" button using selector ${selector}.`);
+                if (button && button.matches('button[data-testid="send-button"]')) {
+                    logDebug(`Found "New Message" button using selector [${index}]: ${selector}.`);
                     matchingButton = button;
                     buttonType = 'NewMessage';
                     totalMatches++;
                 }
             });
 
+            // If a matching button was found, return the one with the highest matches
             if (matchingButton) {
-                console.debug(`Found button with highest matches (${totalMatches}). Type: ${buttonType}`);
+                logDebug(`Found button with highest matches (${totalMatches}). Type: ${buttonType}`);
                 return matchingButton;
             }
 
-            parent = parent.parentElement; // Move up to the parent element
+            // Move up the DOM tree to the parent element and continue searching
+            parent = parent.parentElement;
         }
 
+        // Log a warning if no matching button was found after the search
         console.warn('Button not found after checking parent elements.');
         return null;
     }
@@ -143,7 +186,7 @@
      */
     function simulateMouseClick(button) {
         if (button) {
-            console.debug('Simulating mouse click on the button.');
+            logDebug('Simulating mouse click on the button.', button);
 
             const mousedownEvent = new MouseEvent('mousedown', {
                 bubbles: true,
@@ -166,40 +209,72 @@
             button.dispatchEvent(mouseupEvent);
             button.dispatchEvent(clickEvent);
 
-            console.debug("Mouse click simulation completed.");
+            logDebug("Mouse click simulation completed for the button:", button);
         } else {
             console.warn("Button for click simulation not found.");
         }
     }
 
     /**
-     * Keydown event handler to intercept Enter and Ctrl+Enter key presses.
-     * - Inserts a line break if Enter is pressed without Ctrl/Alt.
-     * - Sends the message if Ctrl+Enter is pressed.
+     * Keydown event handler to intercept Enter, Ctrl+Enter, and Shift+Enter key presses.
+     * - Sends the message if Ctrl+Enter is pressed by finding and simulating a click on the send button.
+     * - Inserts a line break when Enter or Shift+Enter is pressed in a contenteditable element or textarea.
+     * - Prevents the default behavior to handle these key actions manually.
+     * @param {KeyboardEvent} event - The keyboard event triggered by pressing a key.
      */
     document.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
-            const activeElement = document.activeElement;
+        // Define the keys that are monitored by this event listener
+        const allowedKeys = ['Enter', 'Control', 'Shift'];
 
-            // Insert a line break on Enter without Ctrl or Alt
-            if (!event.ctrlKey && !event.altKey) {
-                event.preventDefault();
-                console.debug("Inserting line break into active element.");
-                insertLineBreak(activeElement);
+        // Ignore other key presses and handle only specified key actions
+        if (!allowedKeys.includes(event.key)) {
+            return; // Ignore all other key presses
+        }
+
+        // Get the active element to process it
+        const activeElement = document.activeElement;
+
+        logDebug(`Keydown event detected. Key: ${event.key}, CtrlKey: ${event.ctrlKey}, ShiftKey: ${event.shiftKey}, AltKey: ${event.altKey}`);
+
+        // If Ctrl+Enter is pressed, send the message by simulating a click on the send button
+        if (event.key === 'Enter' && event.ctrlKey) {
+            event.preventDefault();
+            logDebug("Ctrl+Enter detected, preparing to send the message.");
+
+            // Search for the closest send button and simulate a mouse click
+            const button = findClosestButton(activeElement);
+            if (button) {
+                simulateMouseClick(button);
+            } else {
+                console.warn("Message send button not found.");
             }
+        }
+        // If Enter or Shift+Enter is pressed, insert a line break manually using insertLineBreak
+        else if (event.key === 'Enter' && !event.ctrlKey && !event.altKey && !event.__isSimulated) {
+            event.preventDefault();
+            logDebug("Enter or Shift+Enter detected, inserting line break manually.");
 
-            // Send the message on Ctrl+Enter
-            if (event.ctrlKey) {
-                event.preventDefault();
-                console.debug("Searching for the send button with Ctrl+Enter.");
+            // If the active element is contenteditable, simulate Shift+Enter to insert a line break
+            if (activeElement && activeElement.isContentEditable) {
+                const shiftEnterEvent = new KeyboardEvent('keydown', {
+                    key: 'Enter',
+                    code: 'Enter',
+                    keyCode: 13,
+                    which: 13,
+                    shiftKey: true,
+                    bubbles: true,
+                    cancelable: true
+                });
 
-                const button = findClosestButton(activeElement);
-                if (button) {
-                    simulateMouseClick(button);
-                } else {
-                    console.warn("Message send button not found.");
-                }
+                // Set a flag to avoid cyclic behavior
+                Object.defineProperty(shiftEnterEvent, '__isSimulated', { value: true });
+
+                event.target.dispatchEvent(shiftEnterEvent);  // Simulate Shift+Enter key press
+            } else if (activeElement.tagName.toLowerCase() === 'textarea' || activeElement.tagName.toLowerCase() === 'input') {
+                insertLineBreak(activeElement);  // For textarea or input elements
             }
         }
     }, true);
+
+    logDebug("Event listener for keydown events initialized.");
 })();
