@@ -29,7 +29,11 @@
         "button[data-testid='send-button'] svg.icon-2xl",               // SVG icon inside the button
         "button.bg-black.text-white.rounded-full",                      // Button by classes
         "button[aria-label][data-testid='send-button']",                // By aria-label and data-testid attributes
-        "button svg[width='32'][height='32'][viewBox='0 0 32 32']"      // Specific SVG inside the button
+        "button svg[width='32'][height='32'][viewBox='0 0 32 32']",     // Specific SVG inside the button
+        "button svg[aria-hidden='true']",                               // SVG with aria-hidden
+        "button > svg",                                                 // Simple SVG inside button
+        "div.chat-footer button:last-child",                            // Last button in chat footer
+        "div.message-actions button[type='submit']",                    // Submit button in message actions
     ];
 
     logDebug("New Message Button Selectors initialized:", newMessageButtonSelectors);
@@ -48,7 +52,8 @@
         "div.flex.justify-end > button:last-child",                     // Last button in the container
         "button.btn-primary[as='button']",                              // Primary class with specific attribute
         "button.btn-primary[style*='background-color']",                // Button styled by background color
-        "button.btn.btn-primary.relative"                               // Button by class names
+        "button.btn.btn-primary.relative",                              // Button by class names
+        "button[aria-label='Save']",                                    // Button with "Save" label
     ];
 
     logDebug("Edit Message Button Selectors initialized:", editMessageButtonSelectors);
@@ -131,7 +136,7 @@
         logDebug("Starting search for closest button. Active element:", activeElement);
 
         let parent = activeElement;
-        const maxSearchLevels = 5;  // Limit the search depth in the DOM tree
+        const maxSearchLevels = 10;  // Limit the search depth in the DOM tree
         let currentLevel = 0;
 
         let matchingButton = null;
@@ -214,6 +219,41 @@
             console.warn("Button for click simulation not found.");
         }
     }
+
+    // MutationObserver to detect dynamic appearance of buttons
+    const observer = new MutationObserver(() => {
+        logDebug("MutationObserver detected changes in the DOM. Checking for buttons...");
+
+        // Combine all valid CSS selectors into one query
+        const cssSelectors = [
+            ...newMessageButtonSelectors,
+            ...editMessageButtonSelectors
+        ].filter(selector => !selector.includes(":contains")); // Exclude unsupported selectors
+
+        const combinedSelectors = cssSelectors.join(", ");
+        let button = document.querySelector(combinedSelectors);
+
+        if (!button) {
+            // Fallback: Check for buttons by text content (if no match found with CSS selectors)
+            const buttons = document.querySelectorAll("button");
+            for (const btn of buttons) {
+                if (btn.textContent.trim() === "Send" || btn.textContent.trim() === "Надіслати") {
+                    button = btn;
+                    break;
+                }
+            }
+        }
+
+        if (button) {
+            logDebug("Button detected dynamically:", button);
+            observer.disconnect(); // Stop observing once the button is found
+        }
+    });
+
+    // Start observing the DOM for changes
+    observer.observe(document.body, { childList: true, subtree: true });
+    logDebug("MutationObserver initialized to detect dynamic button appearance.");
+
 
     /**
      * Keydown event handler to intercept Enter, Ctrl+Enter, and Shift+Enter key presses.
